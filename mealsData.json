@@ -1,0 +1,126 @@
+{
+  "Monday": {
+    "Breakfast": [
+      {"text":"1 stuffed parantha with veggies/potato/paneer + 1 cup curd"},
+      {"text":"40 grams poha cooked with veggies"},
+      {"text":"1 pc besan chilla with veggies + 50g paneer"},
+      {"text":"Paneer tikka sandwich","link":"https://www.instagram.com/reel/DGan1qvTQLo/","thumb":"https://www.instagram.com/p/DGan1qvTQLo/media/?size=l"}
+    ],
+    "Morning snacks":[{"text":"150 grams mixed fruits"}],
+    "Lunch":[
+      {"text":"1 chapati with mix veg sabzi + salad + beetroot/cucumber raita"},
+      {"text":"1 chapati with aloo matar sabzi + 50g grilled paneer + salad"},
+      {"text":"120 grams cooked rice + dal (1 bowl) + salad"}
+    ],
+    "Evening snacks":[{"text":"20 grams roasted chana/makhana/puffed rice chaat"}],
+    "Dinner":[
+      {"text":"Soya keema with atta kulcha + salad","link":"https://www.instagram.com/reel/C_QbqIwvyGP/"},
+      {"text":"1 pc moong dal cheela with veggies"}
+    ],
+    "Pre bed":[{"text":"Saunf water"}]
+  },
+  "Tuesday": {
+    "Breakfast":[
+      {"text":"Crunchy paneer sandwich","link":"https://www.instagram.com/reel/C-fYlE-v0tB/","thumb":"https://www.instagram.com/p/C-fYlE-v0tB/media/?size=l"},
+      {"text":"Paneer tikka sandwich","link":"https://www.instagram.com/reel/C_arO_ZvPHM/","thumb":"https://www.instagram.com/p/C_arO_ZvPHM/media/?size=l"},
+      {"text":"Grilled paneer wrap","link":"https://www.instagram.com/reel/C_S8rTpv0KH/","thumb":"https://www.instagram.com/p/C_S8rTpv0KH/media/?size=l"},
+      {"text":"200 grams mix fruits + 1 spoon seeds"}
+    ],
+    "Morning snacks":[{"text":"150 grams mixed fruits"}],
+    "Lunch":[
+      {"text":"120 grams cooked rice + 200g rajma + salad"},
+      {"text":"120 grams cooked rice + 200g chana sabzi + salad"},
+      {"text":"Russian salad","link":"https://www.instagram.com/reel/DGdLIgVzwtf/","thumb":"https://www.instagram.com/p/DGdLIgVzwtf/media/?size=l"},
+      {"text":"Mexican salad","link":"https://www.instagram.com/reel/C_svGO1vXpL/","thumb":"https://www.instagram.com/p/C_svGO1vXpL/media/?size=l"}
+    ],
+    "Evening snacks":[{"text":"1 cup tea without sugar"}],
+    "Dinner":[
+      {"text":"1 chapati + dal + veggies"},
+      {"text":"Mexican salad","link":"https://www.instagram.com/reel/DFc5kGCPjur/","thumb":"https://www.instagram.com/p/DFc5kGCPjur/media/?size=l"},
+      {"text":"Sautéed veggies + 50g paneer"}
+    ],
+    "Pre bed":[{"text":"Green tea"}]
+  },
+  "Wednesday": {
+    "Breakfast":[
+      {"text":"1 pc BESAN chilla with veggies + 50g paneer"},
+      {"text":"CHANA salad","link":"https://www.instagram.com/reel/C_YCMltPp-v/","thumb":"https://www.instagram.com/p/C_YCMltPp-v/media/?size=l"}
+    ],
+    "Morning snacks":[{"text":"150 grams fruits"}],
+    "Lunch":[
+      {"text":"1 chapati with 60g paneer peas sabzi + salad"},
+      {"text":"CHANA paneer salad","link":"https://www.instagram.com/reel/C_VfhKXPc4g/","thumb":"https://www.instagram.com/p/C_VfhKXPc4g/media/?size=l"}
+    ],
+    "Evening snacks":[{"text":"Green tea"}],
+    "Dinner":[
+      {"text":"Paneer chilli wrap","link":"https://www.instagram.com/reel/DFxakvNPj88/","thumb":"https://www.instagram.com/p/DFxakvNPj88/media/?size=l"},
+      {"text":"1 chapati + dal + salad"}
+    ],
+    "Pre bed":[{"text":"Green tea"}]
+  },
+  "Thursday": {
+    "Breakfast":[
+      {"text":"Besan 40g + paneer 50g + veggies chilla 1 serve"},
+      {"text":"Chana paneer sandwich","link":"https://www.instagram.com/reel/C_A80VoPRy-/","thumb":"https://www.instagram.com/p/C_A80VoPRy-/media/?size=l"}
+    ],
+    "Morning snacks":[{"text":"Green tea"}],
+    "Lunch":[
+      {"text":"1 chapati with any green veg + 50g paneer + salad"},
+      {"text":"Chana salad","link":"https://www.instagram.com/reel/C_svGO1vXpL/","thumb":"https://www.instagram.com/p/C_svGO1vXpL/media/?size=l"}
+    ],
+    "Evening snacks":[{"text":"Green tea"}],
+    "Dinner":[
+      {"text":"1 pc suji cheela stuffed with veggies"},
+      {"text":"2 pc soya tikki"}
+    ],
+    "Pre bed":[{"text":"Green tea"}]
+  },
+  "Friday": {
+    "Breakfast":[
+      {"text":"3 pcs of idli fried with veggies"},
+      {"text":"Chilli paneer wrap","link":"https://www.instagram.com/reel/C-0CAgovz8w/","thumb":"https://www.instagram.com/p/C-0CAgovz8w/media/?size=l"}
+    ],
+    "Morning snacks":[{"text":"Green tea"}],
+    "Lunch":[
+      {"text":"120 grams cooked rice + 150g matar mushroom sabzi + salad"},
+      {"text":"Rajma salad 30g rajma + 200g salad + 50g paneer + 50g curd"}
+    ],
+    "Evening snacks":[{"text":"Green tea"}],
+    "Dinner":[
+      {"text":"1 chapati + 1 katori dal + salad"},
+      {"text":"Mix veg soup + 50g paneer"}
+    ],
+    "Pre bed":[{"text":"Green tea"}]
+  },
+  "Saturday": {
+    "Breakfast":[
+      {"text":"40 grams poha cooked with veggies"},
+      {"text":"200 grams mix fruits + 1 spoon seeds"}
+    ],
+    "Morning snacks":[{"text":"Green tea"}],
+    "Lunch":[
+      {"text":"1 chapati + 40g black chana sabzi + salad"},
+      {"text":"1 chapati + 50g paneer bhurji + salad"}
+    ],
+    "Evening snacks":[{"text":"Green tea"}],
+    "Dinner":[
+      {"text":"1 pc moong dal cheela stuffed with veggies"},
+      {"text":"50g paneer + sauté veggies"}
+    ],
+    "Pre bed":[{"text":"Green tea"}]
+  },
+  "Sunday": {
+    "Breakfast":[{"text":"No breakfast"}],
+    "Morning snacks":[{"text":"Green tea"}],
+    "Lunch":[
+      {"text":"1 quarter plate paneer fried rice + salad","link":"https://www.instagram.com/reel/C_YCMltPp-v/","thumb":"https://www.instagram.com/p/C_YCMltPp-v/media/?size=l"},
+      {"text":"120 grams cooked fried rice + 40g soya chunks"}
+    ],
+    "Evening snacks":[{"text":"200 mL milk or 1 bowl sauté veggies + 50g paneer"}],
+    "Dinner":[
+      {"text":"Paneer tikka pizza","link":"https://www.instagram.com/reel/DF2mwr4PHlL/","thumb":"https://www.instagram.com/p/DF2mwr4PHlL/media/?size=l"},
+      {"text":"Grilled paneer sub","link":"https://www.instagram.com/reel/DGan1qvTQLo/","thumb":"https://www.instagram.com/p/DGan1qvTQLo/media/?size=l"}
+    ],
+    "Pre bed":[{"text":"Green tea"}]
+  }
+}
