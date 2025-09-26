@@ -17,8 +17,6 @@
   .recipe:hover { transform: translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15); }
   .recipe p { margin-bottom:0.5rem; font-weight:500; }
   .recipe h3 { margin-bottom:0.5rem; font-size:1rem; color:#4f46e5; }
-  .thumb { display:block; width:100%; border-radius:0.75rem; margin-top:0.5rem; cursor:pointer; }
-
   @media (min-width:600px){
     .selectors{ flex-direction:row; gap:1rem; }
     .selectors select{ flex:1; }
@@ -49,6 +47,9 @@
   <div id="recipes" class="recipes"></div>
 </div>
 
+<!-- Instagram embed script -->
+<script async src="//www.instagram.com/embed.js"></script>
+
 <script>
 let mealsData = {};
 
@@ -59,6 +60,34 @@ async function loadMeals() {
   } catch (err) {
     console.error("Error loading mealsData.json:", err);
   }
+}
+
+function createRecipeCard(day, meal, item) {
+  const div = document.createElement("div");
+  div.className = "recipe";
+
+  const h3 = document.createElement("h3");
+  h3.textContent = day + " - " + meal;
+  div.appendChild(h3);
+
+  const p = document.createElement("p");
+  p.textContent = item.text;
+  div.appendChild(p);
+
+  if(item.link){
+    // Instagram embed
+    const blockquote = document.createElement("blockquote");
+    blockquote.className = "instagram-media";
+    blockquote.setAttribute("data-instgrm-permalink", item.link);
+    blockquote.setAttribute("data-instgrm-version", "14");
+    blockquote.style.margin = "1rem 0";
+    div.appendChild(blockquote);
+
+    // Re-run Instagram embed script
+    if(window.instgrm) window.instgrm.Embeds.process();
+  }
+
+  return div;
 }
 
 async function showRecipes() {
@@ -75,26 +104,7 @@ async function showRecipes() {
   }
 
   mealsData[day][meal].forEach(item => {
-    const div = document.createElement("div");
-    div.className = "recipe";
-
-    const h3 = document.createElement("h3");
-    h3.textContent = day + " - " + meal;
-    div.appendChild(h3);
-
-    const p = document.createElement("p");
-    p.textContent = item.text;
-    div.appendChild(p);
-
-    if(item.link){
-      const thumb = document.createElement("img");
-      thumb.src = item.thumb || "https://via.placeholder.com/720x405?text=Instagram+Recipe";
-      thumb.className = "thumb";
-      thumb.onclick = () => window.open(item.link, "_blank");
-      div.appendChild(thumb);
-    }
-
-    recipesDiv.appendChild(div);
+    recipesDiv.appendChild(createRecipeCard(day, meal, item));
   });
 }
 
@@ -106,26 +116,7 @@ async function showAllRecipes() {
   Object.keys(mealsData).forEach(day => {
     Object.keys(mealsData[day]).forEach(meal => {
       mealsData[day][meal].forEach(item => {
-        const div = document.createElement("div");
-        div.className = "recipe";
-
-        const h3 = document.createElement("h3");
-        h3.textContent = day + " - " + meal;
-        div.appendChild(h3);
-
-        const p = document.createElement("p");
-        p.textContent = item.text;
-        div.appendChild(p);
-
-        if(item.link){
-          const thumb = document.createElement("img");
-          thumb.src = item.thumb || "https://via.placeholder.com/720x405?text=Instagram+Recipe";
-          thumb.className = "thumb";
-          thumb.onclick = () => window.open(item.link, "_blank");
-          div.appendChild(thumb);
-        }
-
-        recipesDiv.appendChild(div);
+        recipesDiv.appendChild(createRecipeCard(day, meal, item));
       });
     });
   });
