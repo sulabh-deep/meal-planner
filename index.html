@@ -1,105 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meal Planner</title>
-  <style>
-    body { font-family: sans-serif; background: #f9fafb; color: #333; margin:0; padding:2rem; display:flex; justify-content:center; }
-    .container { background:#fff; padding:2rem; border-radius:1rem; max-width:800px; width:100%; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
-    h1 { text-align:center; margin-bottom:1.5rem; }
-    select, button { padding:0.75rem 1rem; margin:0.5rem 0; border-radius:0.75rem; border:1px solid #ccc; width:100%; font-size:1rem; }
-    button { background:#4f46e5; color:white; border:none; cursor:pointer; margin-top:1rem; }
-    button:hover { background:#4338ca; }
-    .recipes { margin-top:2rem; display:flex; flex-direction:column; gap:1.5rem; }
-    .recipe { background:#f3f4f6; padding:1rem; border-radius:0.75rem; }
-    .recipe p { margin-bottom:0.5rem; }
-    iframe { width:100%; height:480px; border:0; border-radius:0.5rem; }
-    @media (min-width:600px){ .selectors{ display:flex; gap:1rem; } .selectors select{ flex:1; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meal Planner</title>
+<style>
+  body { font-family: sans-serif; background:#f9fafb; color:#333; margin:0; padding:2rem; display:flex; justify-content:center; }
+  .container { background:#fff; padding:2rem; border-radius:1rem; max-width:800px; width:100%; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+  h1 { text-align:center; margin-bottom:1.5rem; }
+  select, button { padding:0.75rem 1rem; margin:0.5rem 0; border-radius:0.75rem; border:1px solid #ccc; width:100%; font-size:1rem; }
+  button { background:#4f46e5; color:white; border:none; cursor:pointer; margin-top:1rem; }
+  button:hover { background:#4338ca; }
+  .recipes { margin-top:2rem; display:flex; flex-direction:column; gap:1.5rem; }
+  .recipe { background:#f3f4f6; padding:1rem; border-radius:0.75rem; }
+  .recipe p { margin-bottom:0.5rem; }
+  .thumb { display:block; width:100%; border-radius:0.5rem; margin-top:0.5rem; cursor:pointer; }
+  @media (min-width:600px){ .selectors{ display:flex; gap:1rem; } .selectors select{ flex:1; } }
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Meal Planner</h1>
-    <div class="selectors">
-      <select id="day">
-        <option>Monday</option>
-        <option>Tuesday</option>
-        <option>Wednesday</option>
-        <option>Thursday</option>
-        <option>Friday</option>
-        <option>Saturday</option>
-        <option>Sunday</option>
-      </select>
-      <select id="meal">
-        <option>Breakfast</option>
-        <option>Morning snacks</option>
-        <option>Lunch</option>
-        <option>Evening snacks</option>
-        <option>Dinner</option>
-        <option>Pre bed</option>
-      </select>
-    </div>
-    <button onclick="showRecipes()">Show Recipes</button>
-    <div id="recipes" class="recipes"></div>
+<div class="container">
+  <h1>Meal Planner</h1>
+  <div class="selectors">
+    <select id="day">
+      <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+      <option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
+    </select>
+    <select id="meal">
+      <option>Breakfast</option><option>Morning snacks</option><option>Lunch</option>
+      <option>Evening snacks</option><option>Dinner</option><option>Pre bed</option>
+    </select>
   </div>
+  <button onclick="showRecipes()">Show Recipes</button>
+  <div id="recipes" class="recipes"></div>
+</div>
 
-  <script>
-    const mealsData = {
-      Monday: {
-        Breakfast: [
-          { text: "Stuffed parantha with veggies/potato/paneer + 1 cup curd" },
-          { text: "40 grams poha cooked with veggies" },
-          { text: "Besan chilla with veggies + 50g paneer" },
-          { text: "Paneer tikka sandwich", link: "https://www.instagram.com/reel/DGan1qvTQLo/" },
-          { text: "1 pc besan chilla with veggies" }
-        ],
-        "Morning snacks":[{text:"150 grams mixed fruits"},{text:"Green tea with 5 almonds"},{text:"Green tea"}],
-        Lunch:[{text:"1 chapati with mix veg sabzi and salad + beetroot/cucumber raita"},{text:"120 grams cooked rice with dal (1 bowl) + salad"},{text:"1 chapati with aloo matar sabzi + 50g grilled paneer + salad"},{text:"1 chapati with any seasonal veg sabzi + salad"},{text:"1 chapati with 150g dal + salad"}],
-        "Evening snacks":[{text:"20 grams roasted chana/makhana/puffed rice chaat"},{text:"1 cup tea without sugar"},{text:"1 cup coffee without sugar"}],
-        Dinner:[{text:"Soya keema with atta kulcha + salad",link:"https://www.instagram.com/reel/C_QbqIwvyGP/"},{text:"1 pc moong dal cheela with veggies"},{text:"30g rice + 40g moong dal khichdi"},{text:"40 grams oats cooked with veggies"}],
-        "Pre bed":[{text:"Saunf water"},{text:"Green tea"}]
-      },
-      Tuesday: {
-        Breakfast:[{text:"Crunchy paneer sandwich",link:"https://www.instagram.com/reel/C-fYlE-v0tB/"},{text:"Paneer tikka sandwich",link:"https://www.instagram.com/reel/C_arO_ZvPHM/"},{text:"Grilled paneer wrap",link:"https://www.instagram.com/reel/C_S8rTpv0KH/"},{text:"200 grams mix fruits + 1 spoon seeds"}],
-        "Morning snacks":[{text:"150 grams mixed fruits"},{text:"Green tea"}],
-        Lunch:[{text:"120 grams cooked rice + 200g rajma + salad"},{text:"120 grams cooked rice + 200g chana sabzi + salad"},{text:"Russian salad",link:"https://www.instagram.com/reel/DGdLIgVzwtf/"},{text:"Mexican salad",link:"https://www.instagram.com/reel/C_svGO1vXpL/"}],
-        "Evening snacks":[{text:"1 cup tea without sugar"}],
-        Dinner:[{text:"1 chapati + dal + veggies"},{text:"Mexican salad",link:"https://www.instagram.com/reel/DFc5kGCPjur/"},{text:"Sautéed veggies + 50g paneer"}],
-        "Pre bed":[{text:"Saunf water"},{text:"Green tea"}]
-      },
-      Wednesday:{Breakfast:[{text:"Placeholder breakfast 1"},{text:"Placeholder breakfast 2"}],"Morning snacks":[{text:"Placeholder snack"}],Lunch:[{text:"Placeholder lunch 1"},{text:"Placeholder lunch 2"}],"Evening snacks":[{text:"Placeholder evening snack"}],Dinner:[{text:"Placeholder dinner"}],"Pre bed":[{text:"Placeholder pre-bed"}]},
-      Thursday:{Breakfast:[{text:"Placeholder breakfast 1"},{text:"Placeholder breakfast 2"}],"Morning snacks":[{text:"Placeholder snack"}],Lunch:[{text:"Placeholder lunch 1"},{text:"Placeholder lunch 2"}],"Evening snacks":[{text:"Placeholder evening snack"}],Dinner:[{text:"Placeholder dinner"}],"Pre bed":[{text:"Placeholder pre-bed"}]},
-      Friday:{Breakfast:[{text:"Placeholder breakfast 1"},{text:"Placeholder breakfast 2"}],"Morning snacks":[{text:"Placeholder snack"}],Lunch:[{text:"Placeholder lunch 1"},{text:"Placeholder lunch 2"}],"Evening snacks":[{text:"Placeholder evening snack"}],Dinner:[{text:"Placeholder dinner"}],"Pre bed":[{text:"Placeholder pre-bed"}]},
-      Saturday:{Breakfast:[{text:"Placeholder breakfast 1"},{text:"Placeholder breakfast 2"}],"Morning snacks":[{text:"Placeholder snack"}],Lunch:[{text:"Placeholder lunch 1"},{text:"Placeholder lunch 2"}],"Evening snacks":[{text:"Placeholder evening snack"}],Dinner:[{text:"Placeholder dinner"}],"Pre bed":[{text:"Placeholder pre-bed"}]},
-      Sunday:{Breakfast:[{text:"Placeholder breakfast 1"},{text:"Placeholder breakfast 2"}],"Morning snacks":[{text:"Placeholder snack"}],Lunch:[{text:"Placeholder lunch 1"},{text:"Placeholder lunch 2"}],"Evening snacks":[{text:"Placeholder evening snack"}],Dinner:[{text:"Placeholder dinner"}],"Pre bed":[{text:"Placeholder pre-bed"}]}
-    };
+<script>
+let mealsData = {};
 
-    function showRecipes() {
-      const day = document.getElementById("day").value;
-      const meal = document.getElementById("meal").value;
-      const recipesDiv = document.getElementById("recipes");
-      recipesDiv.innerHTML = "";
+async function loadMeals() {
+  try {
+    const res = await fetch('mealsData.json');
+    mealsData = await res.json();
+  } catch (err) {
+    console.error("Error loading mealsData.json:", err);
+  }
+}
 
-      if (!mealsData[day] || !mealsData[day][meal]) return;
+async function showRecipes() {
+  if(Object.keys(mealsData).length === 0) await loadMeals();
 
-      mealsData[day][meal].forEach(item => {
-        const div = document.createElement("div");
-        div.className = "recipe";
-        const p = document.createElement("p");
-        p.textContent = item.text;
-        div.appendChild(p);
+  const day = document.getElementById("day").value;
+  const meal = document.getElementById("meal").value;
+  const recipesDiv = document.getElementById("recipes");
+  recipesDiv.innerHTML = "";
 
-        if(item.link){
-          const iframe = document.createElement("iframe");
-          iframe.src = item.link.replace(/\/$/,"") + "/embed";
-          iframe.allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share";
-          div.appendChild(iframe);
-        }
+  if(!mealsData[day] || !mealsData[day][meal]) {
+    recipesDiv.innerHTML = "<p>No recipes found for this selection.</p>";
+    return;
+  }
 
-        recipesDiv.appendChild(div);
-      });
+  mealsData[day][meal].forEach(item => {
+    const div = document.createElement("div");
+    div.className = "recipe";
+
+    const p = document.createElement("p");
+    p.textContent = item.text;
+    div.appendChild(p);
+
+    if(item.link){
+      const thumb = document.createElement("img");
+      thumb.src = item.thumb || "https://via.placeholder.com/720x405?text=Instagram+Recipe";
+      thumb.className = "thumb";
+      thumb.onclick = () => window.open(item.link, "_blank");
+      div.appendChild(thumb);
     }
-  </script>
+
+    recipesDiv.appendChild(div);
+  });
+}
+
+// Preload data for faster UX
+loadMeals();
+</script>
 </body>
 </html>
